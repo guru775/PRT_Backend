@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordering page</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div>
+       <h1>Inventory Table</h1>
+       <table>
+        <tr>
+            <th>Inventory id</th>
+            <th>Inventory type</th>
+            <th>Item name</th>
+            <th>Available quantity</th>
+        </tr>
+          <%inventories.map((ele) => {%>
+             <tr>
+                <td><%=ele._id%></td>
+                <td><%=ele.inventory_type%></td>
+                <td><%=ele.item_name%></td>
+                <td><%=ele.available_quantity%></td>
+                
+             </tr>     
+          <%})%>
+       </table>
+    </div>
+    <div>
+        <h1>Customer Table</h1>
+        <table>
+         <tr>
+             <th>Customer id</th>
+             <th>Customer name</th>
+             <th>email</th>
+         </tr>
+           <%customers.map((ele) => {%>
+              <tr>
+                 <td><%=ele._id%></td>
+                 <td><%=ele.customer_name%></td>
+                 <td><%=ele.email%></td>
+                 
+              </tr>     
+           <%})%>
+        </table>
+     </div>
+     <div>
+        <h1>Order Table</h1>
+        <table>
+         <tr>
+             <th>Customer id</th>
+             <th>Inventory id</th>
+             <th>Item name</th>
+             <th>quantity</th>
+         </tr>
+           <%orders.map((ele) => {%>
+              <tr>
+                 <td><%=ele.customer_id%></td>
+                 <td><%=ele._id%></td>
+                 <td><%=ele.item_name%></td>
+                 <td><%=ele.quantity%></td>
+              </tr>     
+           <%})%>
+        </table>
+     </div>
+</body>
+</html>
